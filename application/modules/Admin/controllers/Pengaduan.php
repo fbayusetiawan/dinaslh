@@ -62,6 +62,19 @@ class Pengaduan extends CI_Controller
         redirect('Admin/' . $this->vn);
     }
 
+    function AccProses()
+    {
+        $idPengaduan = $this->uri->segment(4);
+        $this->primaryModel->AccProses($idPengaduan);
+        redirect('Admin/' . $this->vn . '/Proses');
+    }
+
+    function setuju()
+    {
+        $this->primaryModel->setuju();
+        redirect('Admin/' . $this->vn . '/Selesai');
+    }
+
     public function detail()
     {
 
@@ -79,11 +92,27 @@ class Pengaduan extends CI_Controller
         $this->template->load('template', $this->vn . '/edit', $data);
     }
 
+    function Tolak()
+    {
+        $data['title'] = "Alasan Ditolak";
+        $data['pageTitle'] = "Alasan Ditolak";
+        $id = $this->uri->segment(4);
+        $data['row'] = $this->primaryModel->getDataById($id);
+        $this->template->load('template', $this->vn . '/Tolak', $data);
+    }
+
     function editAction()
     {
         $id = $this->uri->segment(4);
         $this->primaryModel->update($id, $this->upload_foto());
         redirect('Admin/' . $this->vn);
+    }
+
+    function editDitolak()
+    {
+        $id = $this->uri->segment(4);
+        $this->primaryModel->Ditolak($id);
+        redirect('Admin/' . $this->vn);redirect('Admin/' . $this->vn . '/Ditolak');
     }
 
     function delete()

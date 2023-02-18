@@ -10,6 +10,7 @@ class Pengaduan_m extends CI_Model
 
     function getAllData()
     {
+        $this->db->where('verifyLaporan', '1');
         $this->db->join('kategorilaporan', 'kategorilaporan.idKategoriLaporan = pengaduan.idKategoriLaporan', 'left');
         // $this->db->join('pengadu', 'pengadu.idPengadu = pengaduan.idPengadu', 'left');
         return $this->db->get($this->namaTable)->result();
@@ -47,6 +48,24 @@ class Pengaduan_m extends CI_Model
         return $this->db->get($this->namaTable)->row();
     }
 
+    function accProses($idPengaduan)
+    {
+        $object = [
+            'verifyLaporan' => '2'
+        ];
+        $this->db->where('idPengaduan', $idPengaduan);
+        $this->db->update('pengaduan', $object);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Pengaduan Berhasil Diproses</div>');
+    }
+
+    function setuju()
+    {
+        $object = [
+            'verifyLaporan' => '3'
+        ];
+        $this->db->update('pengaduan', $object);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Pengaduan Disetujui</div>');
+    }
 
     function save($fotoLaporan)
     {
@@ -82,6 +101,17 @@ class Pengaduan_m extends CI_Model
         $this->db->where($this->pk, $Value);
         $this->db->update($this->namaTable, $object);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Di Ubah</div>');
+    }
+
+    function ditolak($Value)
+    {
+        $object = [
+            'alasanDitolak' => $this->input->post('alasanDitolak', TRUE),
+            'verifyLaporan' => '4',
+        ];
+        $this->db->where($this->pk, $Value);
+        $this->db->update($this->namaTable, $object);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Pengaduan Di Tolak</div>');
     }
 
     function delete($Value)

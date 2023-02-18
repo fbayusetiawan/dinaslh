@@ -102,16 +102,16 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
 
                         <ul class="nav-second-level" aria-expanded="false">
                             <li>
-                                <a href="#m_absen" data-toggle="modal">Semua Data Laporan</a>
+                                <a href="#m_absen" data-toggle="modal">Laporan Masuk</a>
                             </li>
                             <li>
-                                <a href="#m_absen" data-toggle="modal">Semua Data Proses</a>
+                                <a href="#m_absen" data-toggle="modal">Laporan Diproses</a>
                             </li>
                             <li>
-                                <a href="#m_absen" data-toggle="modal">Semua Data Ditolak</a>
+                                <a href="#m_absen" data-toggle="modal">Laporan Ditolak</a>
                             </li>
                             <li>
-                                <a href="#m_absen" data-toggle="modal">Semua Data Selesai</a>
+                                <a href="#m_absen" data-toggle="modal">Laporan Selesai</a>
                             </li>
                             
                         </ul>
@@ -150,21 +150,6 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <li>
                                 <a href="<?= base_url('Datamaster/Pegawai') ?>">Pegawai</a>
                             </li>
-                            <!-- <li>
-                                <a href="<?= base_url('Datamaster/Pangkat') ?>">Pangkat</a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url('Datamaster/Golongan') ?>">Golongan</a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url('Datamaster/Departemen') ?>">Departemen</a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url('Datamaster/Devisi') ?>">Divisi</a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url('Datamaster/Jabatan') ?>">Jabatan</a>
-                            </li> -->
                         </ul>
                     </li>
                     <li>
@@ -231,23 +216,6 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             </li>
                         </ul>
                     </li>
-
-                    <!-- <li>
-                        <a href="javascript: void(0);">
-                            <i data-feather="inbox"></i>
-                            <span> Perpanjang Kontrak </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li>
-                                <a href="<?= base_url('Admin/Kontrak/Pengajuan') ?>">Pengajuan</a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url('Admin/Kontrak/riwayat') ?>">Riwayat</a>
-                            </li>
-                        </ul>
-                    </li> -->
                 <?php endif ?>
 
 

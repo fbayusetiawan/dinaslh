@@ -29,7 +29,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                             </div>
                         </div>
                         <div class="text-right">
-                            <a href="<?= base_url($linkin) ?>" class="btn btn-primary btn-rounded width-sm">Approve</a>
+                            <a href="<?= base_url($linkin . '/accProses/' . $this->uri->segment(4)) ?>" class="btn btn-primary btn-rounded width-sm">Approve</a>
                             <a href="<?= base_url($linkin) ?>" class="btn btn-danger btn-rounded width-sm">Kembali</a>
                         </div>
                 </div>

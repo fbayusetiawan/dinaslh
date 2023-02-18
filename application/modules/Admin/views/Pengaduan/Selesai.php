@@ -5,9 +5,9 @@ $no = '1';
 <div class="row page-title">
     <div class="col-md-12">
         <nav aria-label="breadcrumb" class="float-right mt-1">
-            <ol class="breadcrumb">
+            <!-- <ol class="breadcrumb">
                 <li><a href="<?= base_url($linkin . '/add') ?>" class="btn btn-success">Tambah Data</a></li>
-            </ol>
+            </ol> -->
         </nav>
         <h4 class="mb-1 mt-0">Data <?= $title ?></h4>
     </div>
@@ -41,12 +41,12 @@ $no = '1';
                                 <td style="width: 100;"><?= $row->lokasiLaporan ?></td>
                                 <td style="width: 100;"><?= $row->instansiLaporan ?></td>
                                 <td style="width: 100;"><?= $row->namaKategori ?></td>
-                                <td style="width: 100;"><?= $row->namaPengadu ?></td>
+                                <td style="width: 100;"><?= $row->namaLengkap ?></td>
                                 <td style="width: 100;"><?= fd_verify($row->verifyLaporan) ?></td>
                                 <td width="100" class="text-center">
                                     <div class="btn-group mb-0">
-                                    <a href="<?= base_url($linkin . '/detail/' . $row->idPengaduan) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Lihat Laporan"><i class="uil uil-eye"></i></a>
-                                        <a href="<?= base_url($linkin . '/edit/' . $row->idPengaduan) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>
+                                    <!-- <a href="<?= base_url($linkin . '/detail/' . $row->idPengaduan) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Lihat Laporan"><i class="uil uil-eye"></i></a>
+                                        <a href="<?= base_url($linkin . '/edit/' . $row->idPengaduan) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a> -->
                                         <a href="<?= base_url($linkin . '/delete/' . $row->idPengaduan) ?>" id="<?= $row->judulLaporan ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="Hapus"><i class="uil uil-trash-alt"></i></a>
                                     </div>
                                 </td>
