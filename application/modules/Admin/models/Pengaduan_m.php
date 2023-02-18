@@ -12,7 +12,6 @@ class Pengaduan_m extends CI_Model
     {
         $this->db->where('verifyLaporan', '1');
         $this->db->join('kategorilaporan', 'kategorilaporan.idKategoriLaporan = pengaduan.idKategoriLaporan', 'left');
-        // $this->db->join('pengadu', 'pengadu.idPengadu = pengaduan.idPengadu', 'left');
         return $this->db->get($this->namaTable)->result();
     }
 

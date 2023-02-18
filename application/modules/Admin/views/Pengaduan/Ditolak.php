@@ -28,6 +28,7 @@ $no = '1';
                             <th class="text-center">Kategori</th>
                             <th class="text-center">Pelapor</th>
                             <th class="text-center">Status</th>
+                            <th class="text-center">Alasan Ditolak</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -43,6 +44,7 @@ $no = '1';
                                 <td style="width: 100;"><?= $row->namaKategori ?></td>
                                 <td style="width: 100;"><?= $row->namaLengkap ?></td>
                                 <td style="width: 100;"><?= fd_verify($row->verifyLaporan) ?></td>
+                                <td style="width: 100;"><?= $row->alasanDitolak ?></td>
                                 <td width="100" class="text-center">
                                     <div class="btn-group mb-0">
                                     <!-- <a href="<?= base_url($linkin . '/detail/' . $row->idPengaduan) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Lihat Laporan"><i class="uil uil-eye"></i></a>

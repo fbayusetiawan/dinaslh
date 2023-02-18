@@ -102,9 +102,9 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
 
                         <ul class="nav-second-level" aria-expanded="false">
                             <li>
-                                <a href="#m_absen" data-toggle="modal">Laporan Masuk</a>
+                                <a href="#m_masuk" data-toggle="modal">Laporan Masuk</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#m_absen" data-toggle="modal">Laporan Diproses</a>
                             </li>
                             <li>
@@ -112,7 +112,7 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             </li>
                             <li>
                                 <a href="#m_absen" data-toggle="modal">Laporan Selesai</a>
-                            </li>
+                            </li> -->
                             
                         </ul>
                     </li>
@@ -231,22 +231,27 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
 
 </div>
 <!-- Left Sidebar End -->
-<div class="modal fade" id="m_absen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="m_masuk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Filter Laporan Masuk</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('laporan/absen') ?>" method="post" target="_blank">
+                <form action="<?= base_url('laporan/Masuk') ?>" method="post" target="_blank">
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Bulan</label>
-                        <?=
-                        form_dropdown('bulan', bulanIndo(), 'default', 'class="form-control"');
-                        ?>
+                        <label for="validationCustom01">Dari</label>
+                        <input type="date" name="dari" value="<?= $hasilTgl ?>" class="form-control">
+                        <div class="invalid-feedback">
+                            Harus diisi!
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="validationCustom01">Sampai</label>
+                        <input type="date" name="sampai" value="<?= $tglkemarin ?>" class="form-control">
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
