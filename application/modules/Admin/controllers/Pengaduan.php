@@ -77,7 +77,6 @@ class Pengaduan extends CI_Controller
 
     public function detail()
     {
-
         $data['row'] =  $this->primaryModel->getDataById($this->uri->segment(4));
         $data['title'] = $this->titles;
         $this->template->load('template', $this->vn . '/detail', $data);

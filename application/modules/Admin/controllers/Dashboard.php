@@ -18,7 +18,7 @@ class Dashboard extends CI_Controller
     {
         $data['title'] = $this->titles;
         $data['pageTitle'] = "Data " . $this->titles;
-        $data['pengadu'] = $this->primaryModel->getPengadu();
+        // $data['pengadu'] = $this->primaryModel->getPengadu();
         $data['pengaduan'] = $this->primaryModel->getPengaduan();
         $data['pengaduanProses'] = $this->primaryModel->getPengaduanProses();
         

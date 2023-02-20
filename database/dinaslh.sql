@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2023 at 04:36 AM
+-- Generation Time: Feb 20, 2023 at 04:42 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -20,73 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `dinaslh`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `departemen`
---
-
-CREATE TABLE `departemen` (
-  `idDepartemen` int(11) NOT NULL,
-  `namaDepartemen` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `devisi`
---
-
-CREATE TABLE `devisi` (
-  `idDevisi` int(11) NOT NULL,
-  `idDepartemen` int(11) NOT NULL,
-  `namaDevisi` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `golongan`
---
-
-CREATE TABLE `golongan` (
-  `idGolongan` int(11) NOT NULL,
-  `namaGolongan` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `golongan`
---
-
-INSERT INTO `golongan` (`idGolongan`, `namaGolongan`) VALUES
-(1, 'I A'),
-(2, 'I B'),
-(3, 'I C'),
-(4, 'I D'),
-(5, 'II A'),
-(6, 'II B'),
-(7, 'II C'),
-(8, 'II D'),
-(9, 'III A'),
-(10, 'III B'),
-(11, 'III C'),
-(12, 'III D'),
-(13, 'IV A'),
-(14, 'IV B'),
-(15, 'IV C'),
-(16, 'IV D');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `jabatan`
---
-
-CREATE TABLE `jabatan` (
-  `idJabatan` int(11) NOT NULL,
-  `namaJabatan` varchar(130) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -112,85 +45,6 @@ INSERT INTO `kategorilaporan` (`idKategoriLaporan`, `namaKategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pangkat`
---
-
-CREATE TABLE `pangkat` (
-  `idPangkat` int(11) NOT NULL,
-  `namaPangkat` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pangkat`
---
-
-INSERT INTO `pangkat` (`idPangkat`, `namaPangkat`) VALUES
-(2, 'Juru Muda Tingkat 1'),
-(3, 'Juru Muda'),
-(4, 'Juru');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pegawai`
---
-
-CREATE TABLE `pegawai` (
-  `idPegawai` varchar(20) NOT NULL,
-  `namaPegawai` varchar(50) NOT NULL,
-  `nik` varchar(16) NOT NULL,
-  `noIndukKepegawaian` varchar(16) NOT NULL,
-  `tanggalMulaiBekerja` date NOT NULL,
-  `tanggalSelesai` date DEFAULT NULL,
-  `jk` int(11) NOT NULL,
-  `tanggalLahir` date NOT NULL,
-  `tempatLahir` varchar(50) NOT NULL,
-  `statusKepegawaian` int(11) NOT NULL,
-  `idDevisi` int(11) NOT NULL,
-  `idPangkat` int(11) NOT NULL,
-  `idGolongan` int(11) NOT NULL,
-  `idJabatan` varchar(30) NOT NULL,
-  `noWa` varchar(16) NOT NULL,
-  `alamat` text NOT NULL,
-  `roleId` int(11) NOT NULL,
-  `isActive` int(11) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` text NOT NULL,
-  `foto` text NOT NULL,
-  `helpNumber` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pengadu`
---
-
-CREATE TABLE `pengadu` (
-  `idPengadu` varchar(20) NOT NULL,
-  `namaPengadu` varchar(150) NOT NULL,
-  `nikPengadu` varchar(16) NOT NULL,
-  `noTelp` varchar(15) NOT NULL,
-  `alamat` text NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` text NOT NULL,
-  `password1` text NOT NULL,
-  `roleId` int(11) NOT NULL,
-  `isActive` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pengadu`
---
-
-INSERT INTO `pengadu` (`idPengadu`, `namaPengadu`, `nikPengadu`, `noTelp`, `alamat`, `email`, `username`, `password`, `password1`, `roleId`, `isActive`) VALUES
-('63d242fae2220', 'Yanuar', '6309020704970006', '085156362132', 'Tanjung', 'yanuar@gmail.com', 'bayu12345', '$2y$10$4EzetepOGSuhXlFjmlKlyOy.XeKENeyVxie8wAoq6mCh4qnZoCZL6', 'bayu123', 3, 1),
-('63d8bb067a230', 'Irama Kelana', '6309020704990003', '081251515627', 'Banjarmasin', 'iramakelana@gmail.com', 'irama001', '$2y$10$EBAJYKxHoFmh0knfmMBWVOT8PuOIX62ScIMfrPzQIxj8vxxKxJAfu', 'irama001', 3, 1);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `pengaduan`
 --
 
@@ -206,9 +60,20 @@ CREATE TABLE `pengaduan` (
   `instansiLaporan` varchar(150) NOT NULL,
   `idKategoriLaporan` int(11) NOT NULL,
   `fotoLaporan` text NOT NULL,
+  `alasanDitolak` text DEFAULT NULL,
   `verifyLaporan` int(11) NOT NULL,
   `isActive` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pengaduan`
+--
+
+INSERT INTO `pengaduan` (`idPengaduan`, `namaLengkap`, `noTelp`, `alamat`, `judulLaporan`, `isiLaporan`, `tanggalLaporan`, `lokasiLaporan`, `instansiLaporan`, `idKategoriLaporan`, `fotoLaporan`, `alasanDitolak`, `verifyLaporan`, `isActive`) VALUES
+('63f0409be6985', 'Rizki', '081251898992', 'Banjarmasin', 'Sampah berserakan', 'iasjdkajnsd,jnawuhdquwndkasndkasduhauhdqjwndkajhsduasdnkajd', '2023-02-18', 'Banjarmasin', 'Kantor Dinas', 2, 'hermes-rivera-265412-unsplash-1024x683.jpg', 'asd', 3, 1),
+('63f0719ea04d3', 'Irama', '082150508989', 'Kalbar', 'Kebakaran Hutan', 'askdjalkusfksa,ndkuyefbkjajknKA,ZHDNVMZ AJCRZSHMDBFLIEUBFIefEFUQ', '2023-02-21', 'Kalbar', 'Dinas Kehutanan', 1, 'foto-ini-disediakan-oleh-pemadam-kebakaran-sdis30-menunjukkan-pohon-pohon_220713154343-258.jpg', 'dljbfahsg', 3, 1),
+('63f0c4c1a9919', 'Raisa', '082150508989', 'tanjung', 'Limbah tambang', 'asdljashdkasfawrhaiuhriajjasdasdnnjn', '2023-02-18', 'Tanjung', 'Adaro', 3, '604b3fc294aaf.jpg', 'cc', 3, 1),
+('63f2ebdc1101c', 'Raden M. Naufal', '081251898990', 'asdadasd', 'asdas', 'asdadasda', '2023-02-14', 'asd', 'Pasar', 2, '37579acc-058a-4879-a65a-22e4fd1383a0.jpg', NULL, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -241,53 +106,10 @@ INSERT INTO `user` (`idUsers`, `username`, `password`, `roleId`, `namaLengkap`, 
 --
 
 --
--- Indexes for table `departemen`
---
-ALTER TABLE `departemen`
-  ADD PRIMARY KEY (`idDepartemen`);
-
---
--- Indexes for table `devisi`
---
-ALTER TABLE `devisi`
-  ADD PRIMARY KEY (`idDevisi`);
-
---
--- Indexes for table `golongan`
---
-ALTER TABLE `golongan`
-  ADD PRIMARY KEY (`idGolongan`);
-
---
--- Indexes for table `jabatan`
---
-ALTER TABLE `jabatan`
-  ADD PRIMARY KEY (`idJabatan`);
-
---
 -- Indexes for table `kategorilaporan`
 --
 ALTER TABLE `kategorilaporan`
   ADD PRIMARY KEY (`idKategoriLaporan`);
-
---
--- Indexes for table `pangkat`
---
-ALTER TABLE `pangkat`
-  ADD PRIMARY KEY (`idPangkat`);
-
---
--- Indexes for table `pegawai`
---
-ALTER TABLE `pegawai`
-  ADD PRIMARY KEY (`idPegawai`),
-  ADD UNIQUE KEY `nik` (`nik`);
-
---
--- Indexes for table `pengadu`
---
-ALTER TABLE `pengadu`
-  ADD PRIMARY KEY (`idPengadu`);
 
 --
 -- Indexes for table `pengaduan`
@@ -307,40 +129,10 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `departemen`
---
-ALTER TABLE `departemen`
-  MODIFY `idDepartemen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `devisi`
---
-ALTER TABLE `devisi`
-  MODIFY `idDevisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `golongan`
---
-ALTER TABLE `golongan`
-  MODIFY `idGolongan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `jabatan`
---
-ALTER TABLE `jabatan`
-  MODIFY `idJabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT for table `kategorilaporan`
 --
 ALTER TABLE `kategorilaporan`
   MODIFY `idKategoriLaporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `pangkat`
---
-ALTER TABLE `pangkat`
-  MODIFY `idPangkat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
