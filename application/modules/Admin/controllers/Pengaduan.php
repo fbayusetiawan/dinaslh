@@ -71,7 +71,8 @@ class Pengaduan extends CI_Controller
 
     function setuju()
     {
-        $this->primaryModel->setuju();
+        $idPengaduan = $this->uri->segment(4);
+        $this->primaryModel->setuju($idPengaduan);
         redirect('Admin/' . $this->vn . '/Selesai');
     }
 

@@ -57,11 +57,12 @@ class Pengaduan_m extends CI_Model
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Pengaduan Berhasil Diproses</div>');
     }
 
-    function setuju()
+    function setuju($idPengaduan)
     {
         $object = [
             'verifyLaporan' => '3'
         ];
+        $this->db->where('idPengaduan', $idPengaduan);
         $this->db->update('pengaduan', $object);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Pengaduan Disetujui</div>');
     }

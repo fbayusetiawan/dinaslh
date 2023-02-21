@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2023 at 04:42 AM
+-- Generation Time: Feb 21, 2023 at 09:57 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -70,10 +70,10 @@ CREATE TABLE `pengaduan` (
 --
 
 INSERT INTO `pengaduan` (`idPengaduan`, `namaLengkap`, `noTelp`, `alamat`, `judulLaporan`, `isiLaporan`, `tanggalLaporan`, `lokasiLaporan`, `instansiLaporan`, `idKategoriLaporan`, `fotoLaporan`, `alasanDitolak`, `verifyLaporan`, `isActive`) VALUES
-('63f0409be6985', 'Rizki', '081251898992', 'Banjarmasin', 'Sampah berserakan', 'iasjdkajnsd,jnawuhdquwndkasndkasduhauhdqjwndkajhsduasdnkajd', '2023-02-18', 'Banjarmasin', 'Kantor Dinas', 2, 'hermes-rivera-265412-unsplash-1024x683.jpg', 'asd', 3, 1),
-('63f0719ea04d3', 'Irama', '082150508989', 'Kalbar', 'Kebakaran Hutan', 'askdjalkusfksa,ndkuyefbkjajknKA,ZHDNVMZ AJCRZSHMDBFLIEUBFIefEFUQ', '2023-02-21', 'Kalbar', 'Dinas Kehutanan', 1, 'foto-ini-disediakan-oleh-pemadam-kebakaran-sdis30-menunjukkan-pohon-pohon_220713154343-258.jpg', 'dljbfahsg', 3, 1),
+('63f0409be6985', 'Rizki', '081251898992', 'Banjarmasin', 'Sampah berserakan', 'iasjdkajnsd,jnawuhdquwndkasndkasduhauhdqjwndkajhsduasdnkajd', '2023-02-18', 'Banjarmasin', 'Kantor Dinas', 2, 'hermes-rivera-265412-unsplash-1024x683.jpg', NULL, 3, 1),
+('63f0719ea04d3', 'Irama', '082150508989', 'Kalbar', 'Kebakaran Hutan', 'askdjalkusfksa,ndkuyefbkjajknKA,ZHDNVMZ AJCRZSHMDBFLIEUBFIefEFUQ', '2023-02-21', 'Kalbar', 'Dinas Kehutanan', 1, 'foto-ini-disediakan-oleh-pemadam-kebakaran-sdis30-menunjukkan-pohon-pohon_220713154343-258.jpg', 'no', 4, 1),
 ('63f0c4c1a9919', 'Raisa', '082150508989', 'tanjung', 'Limbah tambang', 'asdljashdkasfawrhaiuhriajjasdasdnnjn', '2023-02-18', 'Tanjung', 'Adaro', 3, '604b3fc294aaf.jpg', 'cc', 3, 1),
-('63f2ebdc1101c', 'Raden M. Naufal', '081251898990', 'asdadasd', 'asdas', 'asdadasda', '2023-02-14', 'asd', 'Pasar', 2, '37579acc-058a-4879-a65a-22e4fd1383a0.jpg', NULL, 3, 1);
+('63f2ebdc1101c', 'Raden M. Naufal', '081251898990', 'asdadasd', 'asdas', 'asdadasda', '2023-02-14', 'asd', 'Pasar', 2, '37579acc-058a-4879-a65a-22e4fd1383a0.jpg', NULL, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`idUsers`, `username`, `password`, `roleId`, `namaLengkap`, `email`, `noWa`, `isActive`, `foto`, `dateCreated`) VALUES
-('5f269419c1055', 'admin', '$2y$10$DPQFNqddiac1B/P0Rw8L0ekW7DP0DGGxOLBjXxEUxmWehCesqVIfu', 1, 'Rizky Maulana', 'rizkymaulana@gmail.com', '081223231212', 1, '', 0);
+('5f269419c1055', 'admin', '$2y$10$DPQFNqddiac1B/P0Rw8L0ekW7DP0DGGxOLBjXxEUxmWehCesqVIfu', 1, 'Rizky Maulana', 'rizkymaulana@gmail.com', '081223231212', 1, '', 0),
+('63f448786a60d', 'bos123', '$2y$10$mhw4RLhiY7o3gsEWKUmTQOMETItcv5q8wM6fLfkPAJO3uHSjRSEA2', 2, 'Bosku', 'bosse@gmail.com', '0851-5636-2234', 1, '', 1676953720);
 
 --
 -- Indexes for dumped tables

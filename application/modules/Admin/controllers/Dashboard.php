@@ -21,6 +21,8 @@ class Dashboard extends CI_Controller
         // $data['pengadu'] = $this->primaryModel->getPengadu();
         $data['pengaduan'] = $this->primaryModel->getPengaduan();
         $data['pengaduanProses'] = $this->primaryModel->getPengaduanProses();
+        $data['pengaduanSelesai'] = $this->primaryModel->getPengaduanSelesai();
+        $data['pengaduanDitolak'] = $this->primaryModel->getPengaduanDitolak();
         
         $this->template->load('template', $this->vn . '/list', $data);
     }

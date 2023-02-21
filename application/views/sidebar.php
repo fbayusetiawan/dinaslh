@@ -104,54 +104,30 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <li>
                                 <a href="#m_masuk" data-toggle="modal">Laporan Masuk</a>
                             </li>
-                            <!-- <li>
-                                <a href="#m_absen" data-toggle="modal">Laporan Diproses</a>
+                            <li>
+                                <a href="#m_proses" data-toggle="modal">Laporan Diproses</a>
                             </li>
                             <li>
-                                <a href="#m_absen" data-toggle="modal">Laporan Ditolak</a>
+                                <a href="#m_ditolak" data-toggle="modal">Laporan Ditolak</a>
                             </li>
                             <li>
-                                <a href="#m_absen" data-toggle="modal">Laporan Selesai</a>
-                            </li> -->
+                                <a href="#m_selesai" data-toggle="modal">Laporan Selesai</a>
+                            </li>
+                            <li>
+                                <a href="#m_kategori" data-toggle="modal">Laporan Kategori</a>
+                            </li>
                             
                         </ul>
                     </li>
                 <?php elseif ($this->session->userdata('roleId') == '2') : ?>
                     <li>
-                        <a href="javascript: void(0);">
-                            <i data-feather="inbox"></i>
-                            <span> Perpanjang Kontrak </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li>
-                                <a href="<?= base_url('Admin/Kontrak/New') ?>">Pengajuan Baru</a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url('Admin/Kontrak') ?>">Riwayat</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('Admin/Prestasi') ?>">
-                            <i data-feather="award"></i>
-                            <span> Prestasi </span>
+                        <a href="<?= base_url('Admin/Dashboard') ?>">
+                            <i data-feather="home"></i>
+                            <!-- <span class="badge badge-success float-right">1</span> -->
+                            <span> Dashboard </span>
                         </a>
                     </li>
-                    <li>
-                        <a href="javascript: void(0);">
-                            <i data-feather="inbox"></i>
-                            <span> Kepegawaian </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-
-                        <ul class="nav-second-level" aria-expanded="false">
-                            <li>
-                                <a href="<?= base_url('Datamaster/Pegawai') ?>">Pegawai</a>
-                            </li>
-                        </ul>
-                    </li>
+                    <li class="menu-title">Report</li>
                     <li>
                         <a href="javascript: void(0);">
                             <i data-feather="file-text"></i>
@@ -161,29 +137,21 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
 
                         <ul class="nav-second-level" aria-expanded="false">
                             <li>
-                                <a href="<?= base_url('Laporan/pegawai') ?>">Data Pegawai</a>
+                                <a href="#m_masuk" data-toggle="modal">Laporan Masuk</a>
                             </li>
                             <li>
-                                <a href="#m_absen" data-toggle="modal">Rekap Absen</a>
+                                <a href="#m_proses" data-toggle="modal">Laporan Diproses</a>
                             </li>
                             <li>
-                                <a href="#m_cuti" data-toggle="modal">Cuti</a>
+                                <a href="#m_ditolak" data-toggle="modal">Laporan Ditolak</a>
                             </li>
                             <li>
-                                <a href="#m_kenaikan" data-toggle="modal">Kenaikan Pangkat</a>
+                                <a href="#m_selesai" data-toggle="modal">Laporan Selesai</a>
                             </li>
                             <li>
-                                <a href="#m_prestasi" data-toggle="modal">Prestasi</a>
+                                <a href="#m_kategori" data-toggle="modal">Laporan Kategori</a>
                             </li>
-                            <li>
-                                <a href="#m_mutasi" data-toggle="modal">Mutasi</a>
-                            </li>
-                            <li>
-                                <a href="#m_teguran" data-toggle="modal">Teguran</a>
-                            </li>
-                            <li>
-                                <a href="#m_kontrak" data-toggle="modal">Kontrak</a>
-                            </li>
+                            
                         </ul>
                     </li>
                 <?php elseif ($this->session->userdata('roleId') == '3') : ?>
@@ -265,17 +233,17 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
         </div>
     </div>
 </div>
-<div class="modal fade" id="m_teguran" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="m_proses" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Filter Laporan Proses</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('laporan/teguran') ?>" method="post" target="_blank">
+                <form action="<?= base_url('laporan/Proses') ?>" method="post" target="_blank">
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Dari</label>
                         <input type="date" name="dari" value="<?= $hasilTgl ?>" class="form-control">
@@ -299,17 +267,18 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
         </div>
     </div>
 </div>
-<div class="modal fade" id="m_cuti" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="m_ditolak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Filter Laporan Ditolak</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('laporan/cuti') ?>" method="post" target="_blank">
+                <form action="<?= base_url('laporan/Ditolak') ?>" method="post" target="_blank">
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Dari</label>
                         <input type="date" name="dari" value="<?= $hasilTgl ?>" class="form-control">
@@ -333,17 +302,17 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
         </div>
     </div>
 </div>
-<div class="modal fade" id="m_kenaikan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="m_selesai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Filter Laporan Selesai</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('laporan/naikpangkat') ?>" method="post" target="_blank">
+                <form action="<?= base_url('laporan/Selesai') ?>" method="post" target="_blank">
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Dari</label>
                         <input type="date" name="dari" value="<?= $hasilTgl ?>" class="form-control">
@@ -367,7 +336,8 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
         </div>
     </div>
 </div>
-<div class="modal fade" id="m_prestasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="m_kategori" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -377,111 +347,17 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('laporan/prestasi') ?>" method="post" target="_blank">
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Bulan</label>
-                        <?=
-                        form_dropdown('bulan', bulanIndo(), 'default', 'class="form-control"');
-                        ?>
+                <form action="<?= base_url('laporan/kategori') ?>" method="post" target="_blank">
+                <div class="form-group mb-3">
+                        <label for="validationCustom01">Pilih Kategori </label>
+                        <select name="idKategoriLaporan" id="idKategoriLaporan" required class="form-control">
+                            <option value="">Pilih Kategori</option>
+                            <?php foreach (callTable('kategorilaporan')->result() as $kategori) : ?>
+                                <option value="<?= $kategori->idKategoriLaporan ?>"><?= $kategori->namaKategori ?></option>
+                            <?php endforeach; ?>
+                        </select>
                         <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Print</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="m_mutasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= base_url('laporan/mutasi') ?>" method="post" target="_blank">
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Dari</label>
-                        <input type="date" name="dari" value="<?= $hasilTgl ?>" class="form-control">
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Sampai</label>
-                        <input type="date" name="sampai" value="<?= $tglkemarin ?>" class="form-control">
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Print</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="m_gaji" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= base_url('laporan/gaji') ?>" method="post" target="_blank">
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Bulan</label>
-                        <?=
-                        form_dropdown('bulan', bulanIndo(), 'default', 'class="form-control"');
-                        ?>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Print</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="m_kontrak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= base_url('laporan/kontrak') ?>" method="post" target="_blank">
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Dari</label>
-                        <input type="date" name="dari" value="<?= $hasilTgl ?>" class="form-control">
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Sampai</label>
-                        <input type="date" name="sampai" value="<?= $tglkemarin ?>" class="form-control">
-                        <div class="invalid-feedback">
-                            Harus diisi!
+                            Harus dipilih!
                         </div>
                     </div>
             </div>

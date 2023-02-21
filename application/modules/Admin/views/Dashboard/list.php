@@ -27,7 +27,27 @@ $user = $this->db->get('user')->row();
                             <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
                             <div class="media-body">
                                 <h4 class="mt-0 mb-0"><?= $pengaduanProses ?></h4>
-                                <span class="text-muted font-size-13">Jumlah Approve Aduan Masyarakat</span>
+                                <span class="text-muted font-size-13">Jumlah Proses Aduan Masyarakat</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <!-- stat 1 -->
+                        <div class="media p-3">
+                            <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
+                            <div class="media-body">
+                                <h4 class="mt-0 mb-0"><?= $pengaduanSelesai ?></h4>
+                                <span class="text-muted font-size-13">Jumlah Selesai Aduan Masyarakat</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <!-- stat 1 -->
+                        <div class="media p-3">
+                            <i data-feather="users" class="align-self-center icon-dual icon-lg mr-4"></i>
+                            <div class="media-body">
+                                <h4 class="mt-0 mb-0"><?= $pengaduanDitolak ?></h4>
+                                <span class="text-muted font-size-13">Jumlah Ditolak Aduan Masyarakat</span>
                             </div>
                         </div>
                     </div>

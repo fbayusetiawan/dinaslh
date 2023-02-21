@@ -32,6 +32,11 @@ $no = '1';
     <!-- Template Main CSS File -->
     <link href="<?= base_url() ?>assets/ss/css/style.css" rel="stylesheet">
 
+    <!-- App css -->
+    <!-- <link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="<?= base_url() ?>assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
     <!-- plugin Datatables -->
     <link href="<?= base_url() ?>assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url() ?>assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -151,11 +156,10 @@ $no = '1';
                 </div>
 
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col">
                         <div class="card">
                             <div class="card-body">
-
-                                <table id="basic-datatable" class="table nowrap">
+                            <table id="basic-datatable" class="table  nowrap">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -336,23 +340,37 @@ $no = '1';
     <!-- Template Main JS File -->
     <script src="<?= base_url() ?>assets/ss/js/main.js"></script>
 
-    <!-- datatable js -->
-    <script src="<?= base_url() ?>assets/libs/datatables/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/datatables/dataTables.responsive.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/vendor.min.js"></script>
 
-    <script src="<?= base_url() ?>assets/libs/datatables/dataTables.buttons.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/datatables/buttons.bootstrap4.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/datatables/buttons.html5.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/datatables/buttons.flash.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/datatables/buttons.print.min.js"></script> -->
+<!-- optional plugins -->
+<script src="<?= base_url() ?>assets/libs/moment/moment.min.js"></script>
+<script src="<?= base_url() ?>assets/libs/apexcharts/apexcharts.min.js"></script>
+<script src="<?= base_url() ?>assets/libs/flatpickr/flatpickr.min.js"></script>
 
-    <script src="<?= base_url() ?>assets/libs/datatables/dataTables.keyTable.min.js"></script>
-    <script src="<?= base_url() ?>assets/libs/datatables/dataTables.select.min.js"></script>
+<!-- page js -->
+<!-- <script src="<?= base_url() ?>assets/js/pages/dashboard.init.js"></script> -->
 
-    <!-- Datatables init -->
-    <script src="<?= base_url() ?>assets/js/pages/datatables.init.js"></script>
+<!-- App js -->
+<script src="<?= base_url() ?>assets/js/app.min.js"></script>
+<script src="<?= base_url() ?>assets/mask/vendor/igorescobar/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+<script src="<?= base_url() ?>assets/sweetalert/dist/sweetalert2.all.min.js"></script>
+<!-- datatable js -->
+<script src="<?= base_url() ?>assets/libs/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url() ?>assets/libs/datatables/dataTables.responsive.min.js"></script>
+<script src="<?= base_url() ?>assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+
+<script src="<?= base_url() ?>assets/libs/datatables/dataTables.buttons.min.js"></script>
+<script src="<?= base_url() ?>assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+<script src="<?= base_url() ?>assets/libs/datatables/buttons.html5.min.js"></script>
+<script src="<?= base_url() ?>assets/libs/datatables/buttons.flash.min.js"></script>
+<script src="<?= base_url() ?>assets/libs/datatables/buttons.print.min.js"></script> -->
+
+<script src="<?= base_url() ?>assets/libs/datatables/dataTables.keyTable.min.js"></script>
+<script src="<?= base_url() ?>assets/libs/datatables/dataTables.select.min.js"></script>
+
+<!-- Datatables init -->
+<script src="<?= base_url() ?>assets/js/pages/datatables.init.js"></script>
 
 </body>
 
